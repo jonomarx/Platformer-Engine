@@ -11,8 +11,13 @@ public class Game extends JPanel {
     Level level;
 
     public Game() throws IOException {
-        this.level = Level.getLevel(Level.class.getResource("/Assets/example/example.csv"));
+        this.level = Level.getLevel(Level.class.getResource("/Assets/example/level.csv"));
     }
+    
+    public Game(String jarLoc) throws IOException {
+        this.level = Level.getLevelFromJar(jarLoc);
+    }
+    
     @Override
     public void paint(Graphics g) {
         Screen.render(g, level, 0 * PIXELSIZE, 0 * PIXELSIZE);

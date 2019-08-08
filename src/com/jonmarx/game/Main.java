@@ -15,7 +15,19 @@ public class Main {
     
     public static void main(String[] args) throws IOException {
         JFrame frame = new JFrame();
-        Game game = new Game();
+        
+        Game game;
+        
+        if(args.length == 1) {
+            game = new Game(args[0]);
+        } else if(args.length > 1) {
+            JOptionPane.showMessageDialog(null, "Use:\n args.length = 0: default level\n args.length = 1: args[0] is path to jar/zip to level");
+            System.exit(-1);
+            game = null;
+        } else {
+            game = new Game();
+        }
+        
         frame.setContentPane(game);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(WIDTH, HEIGHT);
