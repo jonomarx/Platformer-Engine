@@ -1,0 +1,10 @@
+SIZE,10,10
+SET,GRAVITY,0.02
+TILE,1,9,example/one.png,util.BasicSolidTile
+TILE,0,9,example/one.png,util.BasicSolidTile
+TILE,2,9,example/one.png,util.BasicSolidTile
+TILE,3,9,example/one.png,util.BasicSolidTile
+TILE,4,9,example/one.png,util.BasicSolidTile
+TILE,0,8,example/one.png,util.BasicSolidTile
+TILE,4,8,example/one.png,util.BasicSolidTile
+ENTITY,2.0,7.5,example/one.png,example.BasicPlayer
