@@ -167,9 +167,9 @@ public class Level {
                         URL[] urls = new URL[]{ur};
                         
                         ClassLoader cl = new URLClassLoader(urls, Thread.currentThread().getContextClassLoader());
-                        Class cls = cl.loadClass("Assets." + segments[4]);
+                        Class cls = cl.loadClass(segments[4]);
                         Constructor<?> ctor = cls.getConstructor(double.class, double.class, BufferedImage.class);
-                        en = (Entity) ctor.newInstance(Double.parseDouble(segments[1]), Double.parseDouble(segments[2]), ImageIO.read(cl.getResourceAsStream("/Assets/" + segments[3])));
+                        en = (Entity) ctor.newInstance(Double.parseDouble(segments[1]), Double.parseDouble(segments[2]), ImageIO.read(jarFile.getInputStream(jarFile.getEntry(segments[3]))));
                     } catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                         en = null;
                         e.printStackTrace();
@@ -183,9 +183,9 @@ public class Level {
                         URL[] urls = new URL[]{ur};
                         
                         ClassLoader cl = new URLClassLoader(urls, Thread.currentThread().getContextClassLoader());
-                        Class cls = cl.loadClass("Assets." + segments[4]);
+                        Class cls = cl.loadClass(segments[4]);
                         Constructor<?> ctor = cls.getConstructor(int.class, int.class, BufferedImage.class);
-                        tile = (Tile) ctor.newInstance(Integer.parseInt(segments[1]), Integer.parseInt(segments[2]), ImageIO.read(cl.getResourceAsStream("/Assets/" + segments[3])));
+                        tile = (Tile) ctor.newInstance(Integer.parseInt(segments[1]), Integer.parseInt(segments[2]), ImageIO.read(jarFile.getInputStream(jarFile.getEntry(segments[3]))));
                     } catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
                         tile = null;
                         e.printStackTrace();

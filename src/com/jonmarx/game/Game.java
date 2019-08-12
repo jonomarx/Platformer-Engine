@@ -9,21 +9,19 @@ import javax.swing.*;
 
 public class Game extends JPanel {
     Level level;
+    public static double xLoc = 0;
+    public static double yLoc = 0;
 
-    public Game() throws IOException {
-        this.level = Level.getLevel(Level.class.getResource("/Assets/example/level.csv"));
-    }
-    
     public Game(String jarLoc) throws IOException {
         this.level = Level.getLevelFromJar(jarLoc);
     }
     
     @Override
     public void paint(Graphics g) {
-        Screen.render(g, level, 0 * PIXELSIZE, 0 * PIXELSIZE);
+        Screen.render(g, level, xLoc * PIXELSIZE, yLoc * PIXELSIZE);
     }
     
     public void update() {
-        Screen.update(level, 3 * PIXELSIZE, 0 * PIXELSIZE);
+        Screen.update(level, xLoc * PIXELSIZE, yLoc * PIXELSIZE);
     }
 }
