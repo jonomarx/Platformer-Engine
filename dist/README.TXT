@@ -16,9 +16,6 @@ java -jar "Platformer.jar"
 To distribute this project, zip up the dist folder (including the lib folder)
 and distribute the ZIP file.
 
-*addition by jonomarx, use java-jar Platformer.jar foo.jar
-*to load a level from a jar, the level.csv (level data) must be in the root of the zip/jar
-
 Notes:
 
 * If two JAR files on the project classpath have the same name, only the first
