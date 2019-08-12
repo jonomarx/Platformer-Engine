@@ -16,6 +16,7 @@ public class Game extends JPanel {
         this.level = Level.getLevelFromJar(jarLoc);
     }
     
+    
     @Override
     public void paint(Graphics g) {
         Screen.render(g, level, xLoc * PIXELSIZE, yLoc * PIXELSIZE);
