@@ -20,12 +20,10 @@ public class Main {
         
         if(args.length == 1) {
             game = new Game(args[0]);
-        } else if(args.length > 1) {
-            JOptionPane.showMessageDialog(null, "Use:\n args.length = 0: default level\n args.length = 1: args[0] is path to jar/zip to level");
+        } else {
+            JOptionPane.showMessageDialog(null, "Use: args[0] is path to jar/zip to level");
             System.exit(-1);
             game = null;
-        } else {
-            game = new Game();
         }
         
         frame.setContentPane(game);

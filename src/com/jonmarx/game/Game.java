@@ -12,10 +12,6 @@ public class Game extends JPanel {
     public static double xLoc = 0;
     public static double yLoc = 0;
 
-    public Game() throws IOException {
-        this.level = Level.getLevel(Level.class.getResource("/Assets/example/level.csv"));
-    }
-    
     public Game(String jarLoc) throws IOException {
         this.level = Level.getLevelFromJar(jarLoc);
     }
